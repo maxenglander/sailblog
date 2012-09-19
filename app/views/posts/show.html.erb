@@ -28,3 +28,16 @@
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+
+<div id="sailthru-scout">
+  <div class="loading">
+    Loading, please wait...
+  </div>
+</div>
+ 
+<script type="text/javascript" src="http://cdn.sailthru.com/scout/v1.js"></script>
+<script type="text/javascript">
+                SailthruScout.setup({
+                    domain: 'horizon.example.com'
+                });
+</script>
