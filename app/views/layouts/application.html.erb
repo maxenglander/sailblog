@@ -11,6 +11,17 @@
 </head>
 <body>
 
+<% @puppetclass="horizon" %>
+<% @node="web01" %>
+<% if @puppetclass=="test"%>
+    <p>fail</p>
+<%elsif @puppetclass=="horizon"%>
+    <p>hello</p>
+    <%if @node=="web01"%>
+        <p>world</p>
+    <%end%>
+<%end%>
+
 <%= yield %>
 
 <!-- Sailthru Horizon -->
@@ -21,7 +32,7 @@
             var s = document.createElement('script');
             s.type = 'text/javascript';
             s.async = true;
-            s.src = location.protocol + '//ak.sail-horizon.com/horizon/v1.js';
+            s.src = location.protocol + '//ak.sail-horizon-sb.com/horizon/v1.js';
             var x = document.getElementsByTagName('script')[0];
             x.parentNode.insertBefore(s, x);
         }
@@ -32,7 +43,7 @@
                 oldOnLoad();
             }
             Sailthru.setup({
-                domain: 'horizon.maxenglander.com'
+                domain: 'horizon.coolshit.com', concierge: true
             });
         };
     })();

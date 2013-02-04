@@ -1,0 +1,10 @@
+<%= @enable_horizon = true %>
+<%= content_for :head do %>
+    <meta property="og:url" content="<%=@url%>" />
+    <meta name="sailthru.title" content="<%=@title%>" />
+    <meta name="sailthru.author" content="<%=@author%>" />
+    <meta name="sailthru.tags" content="<%=@tags%>" />
+    <meta name="sailthru.description" content="<%=@description%>" />
+    <meta name="sailthru.date" content="<%=@date%>" />
+<% end %>
+<%= render 'common/scout' %>
