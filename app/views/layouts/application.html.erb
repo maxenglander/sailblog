@@ -11,17 +11,6 @@
 </head>
 <body>
 
-<% @puppetclass="horizon" %>
-<% @node="web01" %>
-<% if @puppetclass=="test"%>
-    <p>fail</p>
-<%elsif @puppetclass=="horizon"%>
-    <p>hello</p>
-    <%if @node=="web01"%>
-        <p>world</p>
-    <%end%>
-<%end%>
-
 <%= yield %>
 
 <!-- Sailthru Horizon -->
@@ -36,14 +25,17 @@
             var x = document.getElementsByTagName('script')[0];
             x.parentNode.insertBefore(s, x);
         }
+        console.log("Loading horizon");
         loadHorizon();
+        console.log("Loaded horizon");
         var oldOnLoad = window.onload;
         window.onload = function() {
             if (typeof oldOnLoad === 'function') {
                 oldOnLoad();
             }
+            console.log("Setting up sailthru");
             Sailthru.setup({
-                domain: 'horizon.coolshit.com', concierge: true
+                domain: 'horizon.maxenglander.com', concierge: true
             });
         };
     })();
