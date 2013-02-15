@@ -15,11 +15,11 @@
 <%= yield %>
 
 <% if ENV["HORIZON_ENABLED"] %>
-    <%= render 'commons/horizon' %>
+    <%= render 'common/horizon' %>
 <% end %>
 
 <% if ENV["GOOGLE_ANALYTICS_ENABLED"] %>
-    <%= render 'commons/google_analytics' %>
+    <%= render 'common/google_analytics' %>
 <% end %>
 
 </body>
