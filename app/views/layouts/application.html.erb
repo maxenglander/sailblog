@@ -9,6 +9,9 @@
   <% if content_for? :head %>
       <%= yield :head %>
   <% end %>
+  <script type="text/javascript">
+      jQuery.noConflict();
+  </script>
 </head>
 <body>
 
@@ -17,6 +20,10 @@
 <% if ENV["HORIZON_ENABLED"] %>
     <%= render 'common/horizon' %>
 <% end %>
+
+<%if ENV["SCOUT_ENABLED"] %>
+    <%= render 'common/scout' %>
+<%end%>
 
 <% if ENV["GOOGLE_ANALYTICS_ENABLED"] %>
     <%= render 'common/google_analytics' %>
