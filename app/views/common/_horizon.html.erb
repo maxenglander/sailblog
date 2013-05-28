@@ -8,15 +8,12 @@
             var x = document.getElementsByTagName('script')[0];
             x.parentNode.insertBefore(s, x);
         }
-        console.log("Loading horizon");
         loadHorizon();
-        console.log("Loaded horizon");
         var oldOnLoad = window.onload;
         window.onload = function() {
             if (typeof oldOnLoad === 'function') {
                 oldOnLoad();
             }
-            console.log("Setting up sailthru");
             Sailthru.setup({
                 domain: "<%=ENV['HORIZON_DOMAIN']%>", concierge: <%=ENV['CONCIERGE_ENABLED']%>
             });
