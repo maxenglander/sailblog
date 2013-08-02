@@ -2,6 +2,7 @@
 <html>
 <head>
   <title><%= @title || "Sailthru @ maxenglander.com" %></title>
+  <meta charset="utf-8">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script> 
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
@@ -9,9 +10,6 @@
   <% if content_for? :head %>
       <%= yield :head %>
   <% end %>
-  <script type="text/javascript">
-      jQuery.noConflict();
-  </script>
 </head>
 <body>
 
