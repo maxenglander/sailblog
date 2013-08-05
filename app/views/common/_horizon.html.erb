@@ -17,7 +17,7 @@
             Sailthru.setup({
                 domain: "<%=ENV['HORIZON_DOMAIN']%>", 
                 concierge: <%=ENV['CONCIERGE_ENABLED']%>,
-                <%if !ENV['USE_STORED_TAGS_ENABLED'.nil?%>
+                <%if !ENV['USE_STORED_TAGS_ENABLED'].nil?%>
                 useStoredTags: <%=ENV['USE_STORED_TAGS_ENABLED']%>
                 <%end%>
             });
