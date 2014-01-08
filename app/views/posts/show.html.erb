@@ -3,6 +3,7 @@
 <%= content_for :head do %>
     <meta name="sailthru.date" content="<%= @post.created_at %>" />
     <meta name="sailthru.title" content="<%= @post.title %>" />
+    <meta name="sailthru.description" content="<%= @post.description %>" />
     <meta name="sailthru.tags" content="<%= @post.tags %>" />
     <meta name="keywords" content="<%= @post.tags %>" />
 <% end %>
@@ -16,6 +17,11 @@
 <p>
   <b>Title:</b>
   <%= @post.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @post.description %>
 </p>
 
 <p>
