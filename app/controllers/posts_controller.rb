@@ -10,13 +10,17 @@ class PostsController < ApplicationController
     end
   end
 
+  def delete
+      Post.delete(params[:id])
+      format.html { redirect_to posts_path, notice: 'Post was successfully deleted.' }
+  end
+
   # GET /posts/1
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
-
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
       format.json { render json: @post }
     end
   end
